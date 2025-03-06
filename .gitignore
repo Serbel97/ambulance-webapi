@@ -1,0 +1,4 @@
+*.exe
+*.exe~
+./ambulance-api-service
+.DS_Store
