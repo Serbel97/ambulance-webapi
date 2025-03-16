@@ -35,6 +35,9 @@ switch ($command)
     "test" {
         go test -v ./...
     }
+    "docker" {
+        docker build -t sempresionus/ambulance-wl-webapi:local-build -f ${ProjectRoot}/build/docker/Dockerfile .
+    }
     "mongo" {
         mongo up
     }
