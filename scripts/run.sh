@@ -38,6 +38,9 @@ case "$command" in
   openapi)
     docker run --rm -ti -v "${PROJECT_ROOT}":/local openapitools/openapi-generator-cli generate -c /local/scripts/generator-cfg.yaml
     ;;
+  test)
+    go test -v ./...
+    ;;
   mongo)
     # Shift removes the "mongo" command so the rest of the arguments go to our helper.
     shift

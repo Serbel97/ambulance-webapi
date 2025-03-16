@@ -32,6 +32,9 @@ switch ($command)
             mongo down
         }
     }
+    "test" {
+        go test -v ./...
+    }
     "mongo" {
         mongo up
     }
