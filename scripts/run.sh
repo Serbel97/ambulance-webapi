@@ -10,11 +10,13 @@ export AMBULANCE_API_ENVIRONMENT="Development"
 export AMBULANCE_API_PORT="8080"
 
 export AMBULANCE_API_MONGODB_USERNAME="root"
-export AMBULANCE_API_MONGODB_PASSWORD="neUhaDnes"
+export AMBULANCE_API_MONGODB_PASSWORD="root"
 
 # Define a helper function for docker compose using our compose file
 mongo() {
+    echo "mongo command $@"
     docker compose --file "${PROJECT_ROOT}/deployments/docker-compose/compose.yaml" "$@"
+    echo "mongo running with command: $@"
 }
 
 # Execute the corresponding command
@@ -23,7 +25,7 @@ case "$command" in
     # "Try" block:
     # Bring up MongoDB containers in detached mode.
     mongo up --detach
-
+    echo "mongo probably started"
     # Set a trap that will run when the script exits (normal or error),
     # simulating a "finally" block to ensure MongoDB is shut down.
     trap 'mongo down' EXIT
