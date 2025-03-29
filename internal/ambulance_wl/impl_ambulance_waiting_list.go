@@ -16,7 +16,7 @@ func NewAmbulanceWaitingListApi() AmbulanceWaitingListAPI {
 	return &implAmbulanceWaitingListAPI{}
 }
 
-func (o implAmbulanceWaitingListAPI) CreateWaitingListEntry(c *gin.Context) {
+func (o *implAmbulanceWaitingListAPI) CreateWaitingListEntry(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	updateAmbulanceFunc(c, func(c *gin.Context, ambulance *Ambulance) (*Ambulance, interface{}, int) {
 		var entry WaitingListEntry
@@ -67,7 +67,7 @@ func (o implAmbulanceWaitingListAPI) CreateWaitingListEntry(c *gin.Context) {
 	})
 }
 
-func (o implAmbulanceWaitingListAPI) DeleteWaitingListEntry(c *gin.Context) {
+func (o *implAmbulanceWaitingListAPI) DeleteWaitingListEntry(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	updateAmbulanceFunc(c, func(c *gin.Context, ambulance *Ambulance) (*Ambulance, interface{}, int) {
 		entryId := c.Param("entryId")
@@ -96,7 +96,7 @@ func (o implAmbulanceWaitingListAPI) DeleteWaitingListEntry(c *gin.Context) {
 	})
 }
 
-func (o implAmbulanceWaitingListAPI) GetWaitingListEntries(c *gin.Context) {
+func (o *implAmbulanceWaitingListAPI) GetWaitingListEntries(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	updateAmbulanceFunc(c, func(c *gin.Context, ambulance *Ambulance) (*Ambulance, interface{}, int) {
 		result := ambulance.WaitingList
@@ -108,7 +108,7 @@ func (o implAmbulanceWaitingListAPI) GetWaitingListEntries(c *gin.Context) {
 	})
 }
 
-func (o implAmbulanceWaitingListAPI) GetWaitingListEntry(c *gin.Context) {
+func (o *implAmbulanceWaitingListAPI) GetWaitingListEntry(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	updateAmbulanceFunc(c, func(c *gin.Context, ambulance *Ambulance) (*Ambulance, interface{}, int) {
 		entryId := c.Param("entryId")

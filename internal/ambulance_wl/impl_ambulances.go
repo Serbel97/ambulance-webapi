@@ -15,7 +15,7 @@ func NewAmbulancesApi() AmbulancesAPI {
 	return &implAmbulancesAPI{}
 }
 
-func (o implAmbulancesAPI) CreateAmbulance(c *gin.Context) {
+func (o *implAmbulancesAPI) CreateAmbulance(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	value, exists := c.Get("db_service")
 	if !exists {
@@ -87,7 +87,7 @@ func (o implAmbulancesAPI) CreateAmbulance(c *gin.Context) {
 	}
 }
 
-func (o implAmbulancesAPI) DeleteAmbulance(c *gin.Context) {
+func (o *implAmbulancesAPI) DeleteAmbulance(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	value, exists := c.Get("db_service")
 	if !exists {
