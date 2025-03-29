@@ -13,8 +13,7 @@ func NewAmbulanceConditionsApi() AmbulanceConditionsAPI {
 	return &implAmbulanceConditionsAPI{}
 }
 
-func (o implAmbulanceConditionsAPI) GetConditions(c *gin.Context) {
-	//c.AbortWithStatus(http.StatusNotImplemented)
+func (o *implAmbulanceConditionsAPI) GetConditions(c *gin.Context) {
 	updateAmbulanceFunc(c, func(
 		c *gin.Context,
 		ambulance *Ambulance,
