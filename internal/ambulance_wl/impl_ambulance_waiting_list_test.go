@@ -97,7 +97,7 @@ func (suite *AmbulanceWlSuite) Test_UpdateWl_DbServiceUpdateCalled() {
 	//ctx.Request = httptest.NewRequest("POST", "/ambulance/test-ambulance/waitinglist/test-entry", strings.NewReader(json))
 	ctx.Request = httptest.NewRequest("POST", "/api/ambulance/test-ambulance/waitinglist/test-entry", strings.NewReader(json))
 
-	sut := implAmbulanceWaitingListAPI{}
+	sut := &implAmbulanceWaitingListAPI{} //TODO
 
 	// ACT
 	sut.UpdateWaitingListEntry(ctx)
