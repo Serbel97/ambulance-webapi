@@ -136,7 +136,7 @@ func (o *implAmbulanceWaitingListAPI) GetWaitingListEntry(c *gin.Context) {
 	})
 }
 
-func (o implAmbulanceWaitingListAPI) UpdateWaitingListEntry(c *gin.Context) {
+func (o *implAmbulanceWaitingListAPI) UpdateWaitingListEntry(c *gin.Context) {
 	//c.AbortWithStatus(http.StatusNotImplemented)
 	updateAmbulanceFunc(c, func(c *gin.Context, ambulance *Ambulance) (*Ambulance, interface{}, int) {
 		var entry WaitingListEntry
